@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you evaluate or build on this theorem, cite Raphael M. Franco and the exact artifact version."
+title: "The Shell Global Post-Compromise Healing Theorem"
+type: software
+authors:
+  - family-names: Franco
+    given-names: Raphael M.
+version: "1.0.0"
+date-released: "2026-11-20"
+url: "https://linkanetwork.app/research/sgh"
+repository-code: "https://github.com/IA-DAMA/shell-global-healing-theorem"
+abstract: >-
+  A machine-checkable conditional QPT security theorem for global
+  post-compromise healing across retained state, Welcome, resynchronization,
+  retry, crash/restart and multiple installations in the admitted Shell/R8
+  Product trace.
+keywords:
+  - Messaging Layer Security
+  - post-compromise security
+  - post-quantum cryptography
+  - EasyCrypt
+  - Lean
+  - formal verification
+license: AGPL-3.0-only
+

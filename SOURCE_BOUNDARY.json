@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact": "shell-global-healing-theorem-v1.0.0",
+  "public": [
+    "formal theorem modules",
+    "negative controls",
+    "public research lab",
+    "claims, licenses, citation and reproduction instructions"
+  ],
+  "hash_bound_not_embedded": [
+    {
+      "class": "native Product correspondence checkout",
+      "commit": "476bd8f1f4755ae2f6a689d23a937ba2573434a4",
+      "review": "AGPL Corresponding Source for applicable distributed releases or controlled review"
+    }
+  ],
+  "never_public_in_this_artifact": [
+    "credentials and signing keys",
+    "user data",
+    "production configuration and topology",
+    "backend source not required by an applicable license",
+    "unpublished research and operational attack material"
+  ],
+  "warning": "A commit or file hash establishes identity of bytes. It does not prove semantic correspondence without access to and inspection of those bytes."
+}

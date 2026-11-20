@@ -1,0 +1,11 @@
+FROM ghcr.io/easycrypt/ec-test-box:r2026.06
+ENV PATH="/home/charlie/.opam/ocaml-base-compiler.4.14.2/bin:${PATH}"
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends libmpfr-dev && rm -rf /var/lib/apt/lists/*
+USER charlie
+WORKDIR /app
+RUN opam pin add easycrypt https://github.com/EasyCrypt/easycrypt.git#884dad7a44f72e358900ad15c38edbf1760a73e8 -y --switch=ocaml-base-compiler.4.14.2 --assume-depexts && opam install easycrypt -y --switch=ocaml-base-compiler.4.14.2 --assume-depexts
+COPY --chown=charlie:charlie formal/easycrypt /app/formal/easycrypt
+COPY --chown=charlie:charlie research/november-2026/verify_easycrypt.sh /app/verify_easycrypt.sh
+RUN easycrypt config && bash /app/verify_easycrypt.sh
+CMD ["/bin/sh", "-c", "mkdir -p /tmp/easycrypt-service && echo ok >/tmp/easycrypt-service/status && python3 -m http.server ${PORT:-10000} --directory /tmp/easycrypt-service"]
